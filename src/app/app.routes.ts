@@ -13,7 +13,6 @@ import {AuthorizationGuard} from "./guards/authorization.guard";
 
 export const routes: Routes = [
   {path:"login", component: LoginComponent},
-  {path:"",redirectTo:"login",pathMatch:"full"},
   {path:"admin",component:AdminTemplateComponent, canActivate:[AuthenticationGuard],children:[
       {path:'customers', component: CustomersComponent},
       {path:'new-customer', component: NewCustomerComponent , canActivate:[AuthorizationGuard],data : {roles:['ADMIN']} },
