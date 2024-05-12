@@ -7,7 +7,6 @@ export const httpAppInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService)
   if(!req.url.includes('auth/login')) {
     let token = window.localStorage.getItem("jwt-token");
-    console.log(token);
     let request = req.clone({
       headers: req.headers.set('Authorization', 'Bearer ' + token)
     })

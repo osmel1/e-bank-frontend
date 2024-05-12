@@ -68,7 +68,10 @@ export class CustomersComponent {
   }
 
   goToAccounts(customer: Customer) {
-    this.router.navigateByUrl("/admin/customer-accounts" + customer.id);
+    this.router.navigateByUrl("/admin/customer-accounts/" + customer.id , {state:customer});
+  }
+  goToEdit(customer: Customer) {
+    this.router.navigateByUrl("/admin/edit-customer", {state:customer});
   }
 
   updateCustomer(id: number) {

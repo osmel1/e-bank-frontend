@@ -26,4 +26,8 @@ export class CustomerService {
   public getCustomerAccountsById(id: number):Observable<Array<Customer>>{
     return this.http.get<Array<Customer>>(environment.backend_host+"/customer/"+id+"/accounts");
   }
+  public updateCustomer(customer: Customer):Observable<Customer>{
+
+    return this.http.put<Customer>(environment.backend_host+"/customer/"+customer.id,customer);
+  }
 }

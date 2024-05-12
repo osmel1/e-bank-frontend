@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     let username = this.formGroup.get('username')?.value;
     let password = this.formGroup.get('password')?.value;
-    console.log("username : "+username);
     this.auth.login(username, password).subscribe(
       {
         next: (data) => {

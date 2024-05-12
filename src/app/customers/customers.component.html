@@ -31,10 +31,10 @@
            <button class="btn btn-danger col col-md-3 m-2" (click)="handleDeleteCustomer(customer)" >
              <i class="bi bi-trash"></i>
            </button>
-            <button class="btn btn-success col-md-3 m-2" routerLink="/admin/customer-accounts/{{customer.id}}">
+            <button class="btn btn-success col-md-3 m-2" (click)="goToAccounts(customer)">
               <i class="bi bi-bank"></i>
             </button>
-            <button  class="btn btn-primary col-md-3 m-2"  routerLink="/admin/customer-accounts/{{customer.id}}">
+            <button  class="btn btn-primary col-md-3 m-2"  (click)="goToEdit(customer)">
               <i class="bi bi-pencil"></i>
             </button>
           </td>
